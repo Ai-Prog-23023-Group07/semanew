@@ -106,30 +106,30 @@ class MiddleGenre{
 
 @Controller
 public class DemoController {
-	@RequestMapping(value="/screen3",params={"!RelatedGenre1","!RelatedGenre2"})  //ボタンが押されていないときの処理
+	@RequestMapping(value="/screen3demo",params={"!RelatedGenre1","!RelatedGenre2"})  //ボタンが押されていないときの処理
 	private String showScreen3(Model model) {
 		DataBase database = new DataBase();
 		
 		MiddleGenre succer = database.getMap().get("サッカー");
 		model.addAttribute("middleGenre",succer);
-		return "/screen3.html";
+		return "/screen3demo.html";
 		
 		
 	}
-	@RequestMapping(value = "/screen3",params= {"RelatedGenre1"}) //relatedGenre1が押されたとき
+	@RequestMapping(value = "/screen3demo",params= {"RelatedGenre1"}) //relatedGenre1が押されたとき
 	private String showScreen3RelatedGenre1(String RelatedGenre1,Model model) { //ボタンの名前にはボタンのvalueが入っている
 		DataBase database = new DataBase();
 		MiddleGenre relatedGenre1 = database.getMap().get(RelatedGenre1);
 		model.addAttribute("middleGenre",relatedGenre1);
-		return "/screen3.html";
+		return "/screen3demo.html";
 	}
 	
-	@RequestMapping(value = "/screen3",params= {"RelatedGenre2"}) //relatedGenre1が押されたとき
+	@RequestMapping(value = "/screen3demo",params= {"RelatedGenre2"}) //relatedGenre1が押されたとき
 	private String showScreen3RelatedGenre2(String RelatedGenre2,Model model) { //ボタンの名前にはボタンのvalueが入っている
 		DataBase database = new DataBase();
 		MiddleGenre relatedGenre2 = database.getMap().get(RelatedGenre2);
 		model.addAttribute("middleGenre",relatedGenre2);
-		return "/screen3.html";
+		return "/screen3demo.html";
 	}
 
 }
