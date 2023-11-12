@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
-class DataBase{
+class DataBase{ //デモ用データベース
 	HashMap<String,MiddleGenre> map;
 	
 	public DataBase() {
@@ -129,6 +129,21 @@ public class DemoController {
 		DataBase database = new DataBase();
 		MiddleGenre relatedGenre2 = database.getMap().get(RelatedGenre2);
 		model.addAttribute("middleGenre",relatedGenre2);
+		return "/screen3demo.html";
+	}
+
+	@RequestMapping(value="/screen4demo",params= {"!middleGenre"}) //screen4demoを開いた時の処理、ボタン操作は受け付けない
+	private String showScreen4(Model model) {
+		DataBase database = new DataBase();
+		model.addAttribute("database",database);
+		return "/screen4demo.html";
+	}
+	
+	@RequestMapping(value="/screen4demo",params= {"middleGenre"}) //screen4demoでジャンルのボタンを押したときの処理
+	private String screen4to3(String middleGenre,Model model) {
+		DataBase database = new DataBase();
+		MiddleGenre middlegenre = database.getMap().get(middleGenre);
+		model.addAttribute("middleGenre",middlegenre);
 		return "/screen3demo.html";
 	}
 
