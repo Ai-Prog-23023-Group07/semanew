@@ -1,5 +1,6 @@
 package com.example.semanews;
 
+import java.net.URL;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 
@@ -7,9 +8,9 @@ import org.springframework.data.neo4j.core.schema.Node;
 public class ArticleEntity {
     @Id
     private final String name;
-    private final String url;
+    private final URL url;
 
-    public ArticleEntity(String name, String url) {
+    public ArticleEntity(String name, URL url) {
         this.name = name;
         this.url = url;
     }
@@ -18,7 +19,7 @@ public class ArticleEntity {
         return this.name;
     }
 
-    public String GetUrl() {
+    public URL GetUrl() {
         return this.url;
     }
 }
