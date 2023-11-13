@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>screen3</title>
+</head>
+<body>
+	<form action="/screen3demo" method = "post">
+		
+		<p>[[${middleGenre.getMiddleGenre()}]]</p>  
+  <th:block th:each="url : ${middleGenre.getUrl()}">
+	  <ul>
+		  <li><a href="url" th:href="${url}">[[${url}]]</a></li>  
+	  </ul>
+  </th:block>
+
+<p>関連するジャンル1<br><button name="RelatedGenre1" type = "submit" value="relatedGenre1Name" th:value="${middleGenre.getRelatedGenre1().getMiddleGenre()}">[[${middleGenre.getRelatedGenre1().getMiddleGenre()}]]</button></p>
+<!--ボタンの中身を動的に変化させる-->
+
+
+<p>関連するジャンル2<br><button name="RelatedGenre2" type = "submit" value="relatedGenre2Name" th:value="${middleGenre.getRelatedGenre2().getMiddleGenre()}">[[${middleGenre.getRelatedGenre2().getMiddleGenre()}]]</button></p>
+	
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset ="utf-8" />
+    <title>screen4</title>
+</head>
+<body>
+    <p>中ジャンル</p>
+    
+    <form action="/screen4demo" method="post">
+		<th:block th:each="middlegenre : ${database.getMap().keySet()}">
+			<ul>
+				<li>[[${middlegenre}]]<button name="middleGenre" value="middlegenre" th:value="${middlegenre}">移動</button></li>
+			</ul>
+		</th:block>
+	</form>
+
+    <p>トップに戻る<button name="goTop" value="goTop">ボタン</button></p>
+
+</body>
