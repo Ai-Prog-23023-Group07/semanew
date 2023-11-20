@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -29,12 +30,17 @@ public class SemanewsController {
     @RequestMapping("/main")
     private String showGenre(Model model){
         List<GenreEntity> genreEntities = semanewsRepository.findGenre();
-        GenreEntity g = genreEntities.get(0);
-        System.out.println(g);
-        String a = "テストとと";
-        model.addAttribute("genreEntites", g);
-        model.addAttribute("str", a);
+        String str = genreEntities.get(0).getName();
 
+        //sampleはジャンル名のみを取り出したString型のリスト
+        List<String> test = new ArrayList<String>();
+        for(int i=0; i<genreEntities.size();i++){
+            test.add(genreEntities.get(i).getName());
+        }
+
+        model.addAttribute("genreEntites", genreEntities);
+        model.addAttribute("str", str);
+        model.addAttribute("test", test);
 
         return "/semNewsTest.html";
     }

@@ -7,6 +7,13 @@
 <body>
     <p>テスト</p>
     <h1>[[${str}]]</h1>
-    <h1>[[${genreEntities}]]</h1>
+    <ul>
+        <!-- Thymeleafの構文を使用してListを表示 -->
+        <li th:each="item : ${genreEntities}" th:text="${item}"></li>
+    </ul>
+    <ul>
+        <!-- Thymeleafの構文を使用してListを表示 -->
+        <li th:each="item : ${test}" th:text="${item}"></li>
+    </ul>
 </body>
 </html>
