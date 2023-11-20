@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset ="utf-8" />
+    <title>screen3</title>
+    <link rel="stylesheet" th:href="@{/css/newscreen3.css}" />
+</head>
+<body>
+<form action="/newscreen3" method = "post">
+<div class="con">
+    <div class="topic"><p>[[${middleGenre.getMiddleGenre()}]]</p></div>
+    <div class="link1"><button class="botan" type="button" th:attr="onClick='location.href=\''+${url1}+'\''">[[${url1}]]</button></div>
+    <div class="link2"><button class="botan" type="button" th:attr="onClick='location.href=\''+${url2}+'\''">[[${url2}]]</button></div>
+    <div class="link3"><button class="botan" type="button" th:attr="onClick='location.href=\''+${url3}+'\''">[[${url3}]]</button></div>
+
+    <div class="relatedgenre1">
+        <p>関連するジャンル1<br><button name="RelatedGenre1" type = "submit" value="relatedGenre1Name" th:value="${middleGenre.getRelatedGenre1().getMiddleGenre()}">[[${middleGenre.getRelatedGenre1().getMiddleGenre()}]]</button></p>
+    </div>
+
+    <div class="relatedgenre2">
+        <p>関連するジャンル2<br><button name="RelatedGenre2" type = "submit" value="relatedGenre2Name" th:value="${middleGenre.getRelatedGenre2().getMiddleGenre()}">[[${middleGenre.getRelatedGenre2().getMiddleGenre()}]]</button></p>
+    </div>
+
+    <div class="gotop">
+        <p>ジャンル選択画面へ<br><button name="gotop" value="gotop">goTop</button></p>
+
+    </div>
+</div>
+</body>
+</form>
+</html>
