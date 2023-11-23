@@ -22,25 +22,24 @@ public class SemanewsController {
         this.semanewsRepository = semanewsRepository;
     }
 
-    @GetMapping("/getGenre/{name}")
-    public List<GenreEntity> getGenre() {
-        return semanewsRepository.findGenre();
-    }
-
     @RequestMapping("/main")
     private String showGenre(Model model){
         List<GenreEntity> genreEntities = semanewsRepository.findGenre();
-        String str = genreEntities.get(0).getName();
+        List<TopicEntity> topicEntities = semanewsRepository.findTopicByGenre(genreEntities.get(0).getName());
 
-        //sampleはジャンル名のみを取り出したString型のリスト
-        List<String> test = new ArrayList<String>();
+        System.out.println(topicEntities);
+
+        //testはジャンル名のみを取り出したString型のリスト
+        List<String> genres = new ArrayList<String>();
         for(int i=0; i<genreEntities.size();i++){
-            test.add(genreEntities.get(i).getName());
+            genres.add(genreEntities.get(i).getName());
         }
-
-        model.addAttribute("genreEntites", genreEntities);
-        model.addAttribute("str", str);
-        model.addAttribute("test", test);
+        List<String> topics = new ArrayList<String>();
+        for(int i=0; i<topicEntities.size();i++){
+            topics.add(topicEntities.get(i).getName());
+        }
+        model.addAttribute("genres", genres);
+        model.addAttribute("topics", topics);
 
         return "/semNewsTest.html";
     }
