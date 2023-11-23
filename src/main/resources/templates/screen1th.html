@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>見たいジャンルから選ぶ</title>
+    <link rel="stylesheet" th:href="@{/css/screen.css}" href="../static/css/screen.css" />
+</head>
+<body>
+    <!--渡すべき変数(genre1,genre2,genre3,genre4)-->
+    <form action="/screen1" method = "post"> <!--RequestMappingのvalue="/screen1"-->
+        <div class="grid-container">
+            <!--genre1にジャンル1の名前を渡してください-->
+            <div class="grid-item c">
+                <button name="Genre1" type = "submit" th:value="${genre1}">[[${genre1}]]</button>
+            </div>
+
+            <!--genre2にジャンル2の名前を渡してください-->
+            <div class="grid-item k">
+                <button name="Genre2" type = "submit" th:value="${genre2}">[[${genre2}]]</button>
+            </div>
+
+            <!--genre3にジャンル3の名前を渡してください-->
+            <div class="grid-item o">
+                <button name="Genre3" type = "submit" th:value="${genre3}">[[${genre3}]]</button>
+            </div>
+
+            <!--genre4にジャンル4の名前を渡してください-->
+            <div class="grid-item w">
+                <button name="Genre4" type = "submit" th:value="${genre4}">[[${genre4}]]</button>
+            </div>
+            
+        </div>
+    </form>
+</body>
+</html>

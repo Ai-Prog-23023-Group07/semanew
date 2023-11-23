@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>関連トピック</title>
+    <link rel="stylesheet" th:href="@{/css/screen.css}" href="../static/css/screen.css" />
+</head>
+<body>
+    <!--渡す必要のある変数(genre,topic1,topic2,topic3)-->
+    <form action="/screen2" method = "post"> <!--RequestMappingのvalue="/screen2"-->
+        <div class="grid-container">
+            <!--genreにジャンル名を渡してください-->
+            <div class="grid-item c">
+                <button name="Genre" type = "submit" th:value="${genre}">[[${genre}]]</button>
+            </div>
+            
+            <!--topic1にジャンルの子ジャンル1つ目を渡してください-->
+            <div class="grid-item k">
+                <button name="topic1" type = "submit" th:value="${topic1}">[[${topic1}]]</button>
+            </div>
+
+            <!--topic2にジャンルの子ジャンル2つ目を渡してください-->
+            <div class="grid-item m">
+                <button name="topic2" type = "submit" th:value="${topic2}">[[${topic2}]]</button>
+            </div>
+
+            <!--topic3にジャンルの子ジャンル3つ目を渡してください-->
+            <div class="grid-item o">
+                <button name="topic3" type = "submit" th:value="${topic3}">[[${topic3}]]</button>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>
