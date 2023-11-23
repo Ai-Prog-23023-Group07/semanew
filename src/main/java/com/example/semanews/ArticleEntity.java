@@ -7,10 +7,12 @@ import org.springframework.data.neo4j.core.schema.Node;
 @Node("Article")
 public class ArticleEntity {
     @Id
+    private final Long id;
     private final String name;
     private final URL url;
 
-    public ArticleEntity(String name, URL url) {
+    public ArticleEntity(Long id, String name, URL url) {
+        this.id = id;
         this.name = name;
         this.url = url;
     }
@@ -19,7 +21,12 @@ public class ArticleEntity {
         return this.name;
     }
 
-    public URL GetUrl() {
+    public URL getUrl() {
         return this.url;
+    }
+
+    public String toString(){
+        String str = getName() + ": " + getUrl();
+        return str; 
     }
 }
