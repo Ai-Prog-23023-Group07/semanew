@@ -6,7 +6,7 @@
     <link rel="stylesheet" th:href="@{/css/screen.css}" href="../static/css/screen.css" />
 </head>
 <body>
-    <!--渡す必要のある変数(genre,topic1,topic2,topic3)-->
+    <!--渡す必要のある変数(genre,topics.get(0),topics.get(1),topics.get(2))-->
     <form action="/screen2" method = "post"> <!--RequestMappingのvalue="/screen2"-->
         <div class="grid-container">
             <!--genreにジャンル名を渡してください-->
@@ -16,17 +16,17 @@
             
             <!--topic1にジャンルの子ジャンル1つ目を渡してください-->
             <div class="grid-item k">
-                <button name="topic1" type = "submit" th:value="${topic1}">[[${topic1}]]</button>
+                <button name="topic" type = "submit" th:value="${topics.get(0)}">[[${topics.get(0)}]]</button>
             </div>
 
             <!--topic2にジャンルの子ジャンル2つ目を渡してください-->
             <div class="grid-item m">
-                <button name="topic2" type = "submit" th:value="${topic2}">[[${topic2}]]</button>
+                <button name="topic" type = "submit" th:value="${topics.get(1)}">[[${topics.get(1)}]]</button>
             </div>
 
             <!--topic3にジャンルの子ジャンル3つ目を渡してください-->
             <div class="grid-item o">
-                <button name="topic3" type = "submit" th:value="${topic3}">[[${topic3}]]</button>
+                <button name="topic" type = "submit" th:value="${topics.get(2)}">[[${topics.get(2)}]]</button>
             </div>
         </div>
     </form>

@@ -6,27 +6,27 @@
     <link rel="stylesheet" th:href="@{/css/screen.css}" href="../static/css/screen.css" />
 </head>
 <body>
-    <!--渡すべき変数(genre1,genre2,genre3,genre4)-->
+    <!--渡すべき変数(genres.get(0),genres.get(1),genres.get(2),genres.get(3))-->
     <form action="/screen1" method = "post"> <!--RequestMappingのvalue="/screen1"-->
         <div class="grid-container">
             <!--genre1にジャンル1の名前を渡してください-->
             <div class="grid-item c">
-                <button name="Genre1" type = "submit" th:value="${genre1}">[[${genre1}]]</button>
+                <button name="Genre" type = "submit" th:value="${genres.get(0)}">[[${genres.get(0)}]]</button>
             </div>
 
             <!--genre2にジャンル2の名前を渡してください-->
             <div class="grid-item k">
-                <button name="Genre2" type = "submit" th:value="${genre2}">[[${genre2}]]</button>
+                <button name="Genre" type = "submit" th:value="${genres.get(1)}">[[${genres.get(1)}]]</button>
             </div>
 
             <!--genre3にジャンル3の名前を渡してください-->
             <div class="grid-item o">
-                <button name="Genre3" type = "submit" th:value="${genre3}">[[${genre3}]]</button>
+                <button name="Genre" type = "submit" th:value="${genres.get(2)}">[[${genres.get(2)}]]</button>
             </div>
 
             <!--genre4にジャンル4の名前を渡してください-->
             <div class="grid-item w">
-                <button name="Genre4" type = "submit" th:value="${genre4}">[[${genre4}]]</button>
+                <button name="Genre" type = "submit" th:value="${genres.get(3)}">[[${genres.get(3)}]]</button>
             </div>
             
         </div>
