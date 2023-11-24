@@ -46,7 +46,7 @@ public class SemanewsController {
         }
         List<String> articles = new ArrayList<String>();
         for(int i=0; i<articleEntities.size();i++){
-            articles.add(articleEntities.get(i).getName());
+            articles.add(articleEntities.get(i).getTitle());
         }
 
         model.addAttribute("genres", genres);
