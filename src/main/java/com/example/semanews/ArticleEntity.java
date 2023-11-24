@@ -50,4 +50,9 @@ public class ArticleEntity {
     public void setUrl(URL url) {
         this.url = url;
     }
+
+    public String toString() {
+        System.out.println(this.url);
+        return getTitle() + ": " + getUrl();
+    }
 }

@@ -53,5 +53,9 @@ public class TopicEntity {
     public void setArticles(List<ArticleEntity> articles) {
         this.articles = articles;
     }
+
+    public String toString() {
+        return getName();
+    }
 }
 
