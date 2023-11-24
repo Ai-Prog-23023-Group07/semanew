@@ -52,4 +52,8 @@ public class GenreEntity {
     public void setTopics(List<TopicEntity> topics) {
         this.topics = topics;
     }
+
+    public String toString() {
+        return getName();
+    }
 }
