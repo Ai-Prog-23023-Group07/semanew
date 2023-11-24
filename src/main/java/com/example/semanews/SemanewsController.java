@@ -41,17 +41,38 @@ public class SemanewsController {
     }
     
     @PostMapping("/screen2")
-    private String showscreen2(@RequestParam(defaultValue = "") String Genre, @RequestParam(defaultValue = "") String topic, Model model){
+    private String showscreen2(@RequestParam(defaultValue = "") String Genre, Model model){
         List<TopicEntity> topics = topicRepository.findTopicByGenre(Genre);
         model.addAttribute("genre", Genre);
         model.addAttribute("topics", topics);
-        model.addAttribute("topic", topic);
-
-        //topicに値が入っているならscreen3thへ
-        if(!topic.equals("")) return "/screen3th.html";
 
         return "/screen2th.html";
     }
+
+    @RequestMapping(value="/screen2",params= {"topic"}) //screen2でtopicボタンが押された際の処理
+	private String screen2to3(String topic,Model model) { //screen2から3に遷移する
+         TopicEntity topicEntity = topicRepository.findTopic(topic);
+        GenreEntity genre = genreRepository.findGenreByTopic(topic);
+        List<TopicEntity> relatedTopics = topicRepository.findRelatedTopic(topic);
+        List<ArticleEntity> articles = articleRepository.findArticleByTopic(topic);
+
+        List<String> articleTitles = new ArrayList<>();
+        for(int i=0; i<articles.size(); i++){
+            articleTitles.add(articles.get(i).getTitle());
+        }
+        List<String> articleURLs = new ArrayList<>();
+        for(int i=0; i<articles.size(); i++){
+            articleURLs.add(articles.get(i).getUrl().toString());
+        }
+
+        model.addAttribute("thistopic", topicEntity);
+        model.addAttribute("genre", genre);
+        model.addAttribute("articleTitles", articleTitles);
+        model.addAttribute("articleURLs", articleURLs);
+        model.addAttribute("relatedTopics", relatedTopics);
+
+        return "/screen3th.html";
+	}
 
     @PostMapping("/screen3")
     private String showscreen3(@RequestParam(defaultValue = "") String topic, Model model){
@@ -77,6 +98,11 @@ public class SemanewsController {
 
         return "/screen3th.html";
     }
+
+    @RequestMapping(value="/screen3",params= {"gotop"}) //gotopボタンが押された際の処理
+	private String screen3to1(Model model) { //screen3から1に移る
+		return showscreen1(model); 
+	}
 
     @RequestMapping("/screen4")
     private String showscreen4(Model model){
