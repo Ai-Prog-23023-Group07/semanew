@@ -12,7 +12,7 @@ public class ArticleEntity {
     private Long id;
 
     private String title;
-    private String  URL;
+    private URL URL;
 
     // コンストラクタ、ゲッター、セッターなどの必要なメソッドを追加する
 
@@ -20,7 +20,7 @@ public class ArticleEntity {
         // デフォルトコンストラクタが必要です
     }
 
-    public ArticleEntity(String title, String  URL) {
+    public ArticleEntity(String title, URL  URL) {
         this.title = title;
         this. URL =  URL;
     }
@@ -43,15 +43,15 @@ public class ArticleEntity {
         this.title = title;
     }
 
-    public String getUrl() {
+    public URL getUrl() {
         return  URL;
     }
 
-    public void setUrl(String  URL) {
+    public void setUrl(URL  URL) {
         this. URL =  URL;
     }
 
     public String toString() {
-        return getTitle() + ": " + getUrl();
+        return getTitle() + ": " + getUrl().toString();
     }
 }
