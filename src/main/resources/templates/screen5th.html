@@ -6,59 +6,59 @@
     <link rel="stylesheet" th:href="@{/css/screen.css}" href="../static/css/screen.css" />
 </head>
 <body>
-    <!--渡す必要のある変数(url1~12,midasi1~12)-->
+    <!--渡す必要のある変数(articleURLs.get(1)~12,articleTitles.get(1)~12)-->
     <form action="/screen5" method = "post"> <!--RequestMappingのvalue="/screen5"-->
         <div class="grid-container">
-            <!--url1にニュースのurl,midasi1にニュースの見出しを渡してください-->
+            <!--articleURLs.get(1)にニュースのarticleURLs.get(,)articleTitles.get(1)にニュースの見出しを渡してください-->
             <div class="grid-item a">
-                <button class="botan" type="button" th:attr="onClick='location.href=\''+${url1}+'\''">[[${midasi1}]]</button>
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(0)}+'\''">[[${articleTitles.get(0)}]]</button>
             </div>
         
             <div class="grid-item b">
-                <button class="botan" type="button" th:attr="onClick='location.href=\''+${url2}+'\''">[[${midasi2}]]</button>
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(1)}+'\''">[[${articleTitles.get(1)}]]</button>
             </div>
         
             <div class="grid-item c">
-                <button class="botan" type="button" th:attr="onClick='location.href=\''+${url3}+'\''">[[${midasi3}]]</button>
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(2)}+'\''">[[${articleTitles.get(2)}]]</button>
             </div>
         
         
             <div class="grid-item f">
-                <button class="botan" type="button" th:attr="onClick='location.href=\''+${url4}+'\''">[[${midasi4}]]</button>
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(3)}+'\''">[[${articleTitles.get(3)}]]</button>
             </div>
         
             <div class="grid-item g">
-                <button class="botan" type="button" th:attr="onClick='location.href=\''+${url5}+'\''">[[${midasi5}]]</button>
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(4)}+'\''">[[${articleTitles.get(4)}]]</button>
             </div>
         
             <div class="grid-item h">
-                <button class="botan" type="button" th:attr="onClick='location.href=\''+${url6}+'\''">[[${midasi6}]]</button>
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(5)}+'\''">[[${articleTitles.get(5)}]]</button>
             </div>
         
         
             <div class="grid-item k">
-                <button class="botan" type="button" th:attr="onClick='location.href=\''+${url7}+'\''">[[${midasi7}]]</button>
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(6)}+'\''">[[${articleTitles.get(6)}]]</button>
             </div>
         
             <div class="grid-item l">
-                <button class="botan" type="button" th:attr="onClick='location.href=\''+${url8}+'\''">[[${midasi8}]]</button>
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(7)}+'\''">[[${articleTitles.get(7)}]]</button>
             </div>
         
             <div class="grid-item m">
-                <button class="botan" type="button" th:attr="onClick='location.href=\''+${url9}+'\''">[[${midasi9}]]</button>
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(8)}+'\''">[[${articleTitles.get(8)}]]</button>
             </div>
         
         
             <div class="grid-item p">
-                <button class="botan" type="button" th:attr="onClick='location.href=\''+${url10}+'\''">[[${midasi10}]]</button>
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(9)}+'\''">[[${articleTitles.get(9)}]]</button>
             </div>
         
             <div class="grid-item q">
-                <button class="botan" type="button" th:attr="onClick='location.href=\''+${url11}+'\''">[[${midasi11}]]</button>
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(10)}+'\''">[[${articleTitles.get(10)}]]</button>
             </div>
         
             <div class="grid-item r">
-                <button class="botan" type="button" th:attr="onClick='location.href=\''+${url12}+'\''">[[${midasi12}]]</button>
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(11)}+'\''">[[${articleTitles.get(11)}]]</button>
             </div>
 
         </div>

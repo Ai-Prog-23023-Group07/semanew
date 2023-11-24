@@ -60,10 +60,36 @@ public class SemanewsController {
         List<TopicEntity> relatedTopics = topicRepository.findRelatedTopic(topic);
         List<ArticleEntity> articles = articleRepository.findArticleByTopic(topic);
 
-        System.out.println(topic);
-        System.out.println(genre);
-        System.out.println(relatedTopics);
-        System.out.println(articles);
+        List<String> articleTitles = new ArrayList<>();
+        for(int i=0; i<articles.size(); i++){
+            articleTitles.add(articles.get(i).getTitle());
+        }
+        List<String> articleURLs = new ArrayList<>();
+        for(int i=0; i<articles.size(); i++){
+            articleURLs.add(articles.get(i).getUrl().toString());
+        }
+
+        model.addAttribute("thistopic", topicEntity);
+        model.addAttribute("genre", genre);
+        model.addAttribute("articleTitles", articleTitles);
+        model.addAttribute("articleURLs", articleURLs);
+        model.addAttribute("relatedTopics", relatedTopics);
+
+        return "/screen3th.html";
+    }
+
+    @RequestMapping("/screen4")
+    private String showscreen4(Model model){
+        List<TopicEntity> topics = topicRepository.findTopic();
+
+        model.addAttribute("topics", topics);
+
+        return "/screen4th.html";
+    }
+
+    @RequestMapping("/screen5")
+    private String showscreen5(Model model){
+        List<ArticleEntity> articles = articleRepository.findArticle();
 
         List<String> articleTitles = new ArrayList<>();
         for(int i=0; i<articles.size(); i++){
@@ -73,17 +99,11 @@ public class SemanewsController {
         for(int i=0; i<articles.size(); i++){
             articleURLs.add(articles.get(i).getUrl().toString());
         }
-        System.out.println(articleTitles);
-        System.out.println(articleURLs);
 
-
-        model.addAttribute("thistopic", topicEntity);
-        model.addAttribute("genre", genre);
         model.addAttribute("articleTitles", articleTitles);
         model.addAttribute("articleURLs", articleURLs);
-        model.addAttribute("relatedTopics", relatedTopics);
 
-        return "/screen3th.html";
+        return "/screen5th.html";
     }
 }
 
