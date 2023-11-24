@@ -36,6 +36,12 @@ public class SemanewsController {
         System.out.println(topicEntities);
         System.out.println(articleEntities);
 
+        List<TopicEntity> topicEntitiesByGenre = topicRepository.findTopicByGenre("政治");
+        List<ArticleEntity> articleEntitiesByTopic = articleRepository.findArticleByTopic("選挙");
+
+        System.out.println(topicEntitiesByGenre);
+        System.out.println(articleEntitiesByTopic);
+        
         List<String> genres = new ArrayList<String>();
         for(int i=0; i<genreEntities.size();i++){
             genres.add(genreEntities.get(i).getName());
