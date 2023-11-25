@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface ArticleRepository extends Neo4jRepository<ArticleEntity, Long>{
     //アーティクルエンティティを12個返す
-    @Query("MATCH(a:Article) RETURN a LIMIT 12")
+    @Query("MATCH(a:Article) RETURN a ORDER BY rand() LIMIT 12")
     List<ArticleEntity> findArticle();
 
     //指定したトピックを関連する記事を2つを上限に返す

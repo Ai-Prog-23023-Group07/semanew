@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface TopicRepository extends Neo4jRepository<TopicEntity, Long>{
     //トピックエンティティを12個返す
-    @Query("MATCH(t:Topic) RETURN t LIMIT 12")
+    @Query("MATCH(t:Topic) RETURN t ORDER BY rand() LIMIT 12")
     List<TopicEntity> findTopic();
 
     //引数の名前のトピックを返す
