@@ -99,9 +99,19 @@ public class SemanewsController {
         return "/screen3th.html";
     }
 
-    @RequestMapping(value="/screen3",params= {"gotop"}) //gotopボタンが押された際の処理
+    @RequestMapping(value="/screen3",params= {"goGenre"}) //goGenreボタンが押された際の処理
 	private String screen3to1(Model model) { //screen3から1に移る
 		return showscreen1(model); 
+	}
+
+    @RequestMapping(value="/screen3",params= {"goTopic"}) //goTopicボタンが押された際の処理
+	private String screen3to4(Model model) { //screen3から4に移る
+		return showscreen4(model); 
+	}
+
+    @RequestMapping(value="/screen3",params= {"goArticle"}) //goArticleボタンが押された際の処理
+	private String screen3to5(Model model) { //screen3から5に移る
+		return showscreen5(model); 
 	}
 
     @RequestMapping("/screen4")
@@ -131,5 +141,15 @@ public class SemanewsController {
 
         return "/screen5th.html";
     }
+
+    @RequestMapping(value="/screen5",params= {"goGenre"}) //goGenreボタンが押された際の処理
+	private String screen5to1(Model model) { //screen3から1に移る
+		return showscreen1(model); 
+	}
+
+    @RequestMapping(value="/screen5",params= {"goTopic"}) //goTopicボタンが押された際の処理
+	private String screen5to4(Model model) { //screen3から1に移る
+		return showscreen4(model); 
+	}
 }
 
