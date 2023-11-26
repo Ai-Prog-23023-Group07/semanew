@@ -15,12 +15,12 @@
     <div class="n"><button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(1)}+'\''">[[${articleTitles.get(1)}]]</button></div>
     <!--relatedGenre1に関連するジャンル1つ目のジャンル名を渡してください--><!--ボタンを押すとRelatedGenre1にrelatedGenre1が入って引数String RelatedGenre1に入る-->
     <div class="a">
-        <button name="topic" type = "submit" value="relatedGenre1Name" th:value="${relatedTopics.get(0)}">関連するジャンル1<br>[[${relatedTopics.get(0)}]]</button>
+        <button name="topic" type = "submit" value="relatedGenre1Name" th:value="${relatedTopics.get(0)}">関連するトピック1<br>[[${relatedTopics.get(0)}]]</button>
     </div>
 
     <!--relatedGenre2に関連するジャンル2つ目のジャンル名を渡してください-->
     <div class="e">
-        <button name="topic" type = "submit" value="relatedGenre2Name" th:value="${relatedTopics.get(1)}">関連するジャンル2<br>[[${relatedTopics.get(1)}]]</button>
+        <button name="topic" type = "submit" value="relatedGenre2Name" th:value="${relatedTopics.get(1)}">関連するトピック2<br>[[${relatedTopics.get(1)}]]</button>
 
     </div>
 

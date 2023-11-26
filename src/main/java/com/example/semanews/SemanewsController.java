@@ -24,7 +24,6 @@ public class SemanewsController {
     private final TopicRepository topicRepository;
     private final ArticleRepository articleRepository;
 
-    @Autowired
     public SemanewsController(GenreRepository genreRepository, TopicRepository topicRepository, ArticleRepository articleRepository) {
         this.genreRepository = genreRepository;
         this.topicRepository = topicRepository;
