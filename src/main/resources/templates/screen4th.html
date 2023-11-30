@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>トピックから選ぶ</title>
+    <link rel="stylesheet" th:href="@{/css/screen.css}" href="../static/css/screen.css" />
+</head>
+<body>
+    <!--渡す必要のある変数(topics.get(0),topics.get(1),topics.get(2),topics.get(3)....topics.get(0)2)-->
+    <form action="/screen3" method = "post"> <!--RequestMappingのvalue="/screen4"-->
+        <div class="grid-container">
+            <!--変数topics.get(0),topics.get(1),topics.get(2),,,,,topics.get(0)2にトピック名を渡してください-->
+            <div class="grid-item b">
+                <button name="topic" type = "submit" th:value="${topics.get(0)}">[[${topics.get(0)}]]</button>
+            </div>
+        
+            <div class="grid-item c">
+                <button name="topic" type = "submit" th:value="${topics.get(1)}">[[${topics.get(1)}]]</button>
+            </div>
+        
+            <div class="grid-item d">
+                <button name="topic" type = "submit" th:value="${topics.get(2)}">[[${topics.get(2)}]]</button>
+            </div>
+        
+        
+            <div class="grid-item f">
+                <button name="topic" type = "submit" th:value="${topics.get(3)}">[[${topics.get(3)}]]</button>
+            </div>
+        
+        
+            <div class="grid-item j">
+                <button name="topic" type = "submit" th:value="${topics.get(4)}">[[${topics.get(4)}]]</button>
+            </div>
+        
+            <div class="grid-item k">
+                <button name="topic" type = "submit" th:value="${topics.get(5)}">[[${topics.get(5)}]]</button>
+            </div>
+        
+        
+            <div class="grid-item o">
+                <button name="topic" type = "submit" th:value="${topics.get(6)}">[[${topics.get(6)}]]</button>
+            </div>
+        
+            <div class="grid-item p">
+                <button name="topic" type = "submit" th:value="${topics.get(7)}">[[${topics.get(7)}]]</button>
+            </div>
+        
+        
+            <div class="grid-item t">
+                <button name="topic" type = "submit" th:value="${topics.get(8)}">[[${topics.get(8)}]]</button>
+            </div>
+        
+        
+            <div class="grid-item v">
+                <button name="topic" type = "submit" th:value="${topics.get(9)}">[[${topics.get(9)}]]</button>
+            </div>
+        
+            <div class="grid-item w">
+                <button name="topic" type = "submit" th:value="${topics.get(10)}">[[${topics.get(10)}]]</button>
+            </div>
+        
+            <div class="grid-item x">
+                <button name="topic" type = "submit" th:value="${topics.get(11)}">[[${topics.get(11)}]]</button>
+            </div>
+
+        </div>
+
+
+    </form>
+    
+</body>
+</html>

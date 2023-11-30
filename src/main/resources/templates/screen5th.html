@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>オススメ記事から選ぶ</title>
+    <link rel="stylesheet" th:href="@{/css/screen.css}" href="../static/css/screen.css" />
+</head>
+<body>
+    <!--渡す必要のある変数(articleURLs.get(1)~12,articleTitles.get(1)~12)-->
+    <form action="/screen5" method = "post"> <!--RequestMappingのvalue="/screen5"-->
+        <div class="grid-container">
+            <!--articleURLs.get(1)にニュースのarticleURLs.get(,)articleTitles.get(1)にニュースの見出しを渡してください-->
+            <div class="grid-item a">
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(0)}+'\''">[[${articleTitles.get(0)}]]</button>
+            </div>
+        
+            <div class="grid-item b">
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(1)}+'\''">[[${articleTitles.get(1)}]]</button>
+            </div>
+        
+            <div class="grid-item c">
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(2)}+'\''">[[${articleTitles.get(2)}]]</button>
+            </div>
+        
+        
+            <div class="grid-item f">
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(3)}+'\''">[[${articleTitles.get(3)}]]</button>
+            </div>
+        
+            <div class="grid-item g">
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(4)}+'\''">[[${articleTitles.get(4)}]]</button>
+            </div>
+        
+            <div class="grid-item h">
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(5)}+'\''">[[${articleTitles.get(5)}]]</button>
+            </div>
+        
+        
+            <div class="grid-item k">
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(6)}+'\''">[[${articleTitles.get(6)}]]</button>
+            </div>
+        
+            <div class="grid-item l">
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(7)}+'\''">[[${articleTitles.get(7)}]]</button>
+            </div>
+        
+            <div class="grid-item m">
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(8)}+'\''">[[${articleTitles.get(8)}]]</button>
+            </div>
+        
+        
+            <div class="grid-item p">
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(9)}+'\''">[[${articleTitles.get(9)}]]</button>
+            </div>
+        
+            <div class="grid-item q">
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(10)}+'\''">[[${articleTitles.get(10)}]]</button>
+            </div>
+        
+            <div class="grid-item r">
+                <button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(11)}+'\''">[[${articleTitles.get(11)}]]</button>
+            </div>
+
+            <!--画面遷移用のボタン-->
+            <div class="x">
+                <button name="goGenre" value="goGenre">ジャンルから選ぶ</button>
+            </div>
+            <div class="y">
+                <button name="goTopic" value="goTopic">トピックから選ぶ</button>
+            </div>
+
+        </div>
+    </form>
+   
+</body>
+</html>

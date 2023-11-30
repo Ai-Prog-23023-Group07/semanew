@@ -1,25 +1,57 @@
 package com.example.semanews;
 
-import java.net.URL;
-import org.springframework.data.neo4j.core.schema.Id;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.neo4j.core.schema.Node;
+
+import java.net.URL;
 
 @Node("Article")
 public class ArticleEntity {
+
     @Id
-    private final String name;
-    private final URL url;
+    private Long id;
 
-    public ArticleEntity(String name, URL url) {
-        this.name = name;
-        this.url = url;
+    private String title;
+    private URL URL;
+
+    // コンストラクタ、ゲッター、セッターなどの必要なメソッドを追加する
+
+    public ArticleEntity() {
+        // デフォルトコンストラクタが必要です
     }
 
-    public String getName() {
-        return this.name;
+    public ArticleEntity(String title, URL  URL) {
+        this.title = title;
+        this. URL =  URL;
     }
 
-    public URL GetUrl() {
-        return this.url;
+    // ゲッターとセッターを追加
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public URL getUrl() {
+        return  URL;
+    }
+
+    public void setUrl(URL  URL) {
+        this. URL =  URL;
+    }
+
+    public String toString() {
+        return getTitle() + ": " + getUrl().toString();
     }
 }

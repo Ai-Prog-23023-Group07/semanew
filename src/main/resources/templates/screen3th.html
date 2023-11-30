@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset ="utf-8" />
+    <title>screen3</title>
+    <link rel="stylesheet" th:href="@{/css/screen.css}" href="../static/css/screen.css" />
+</head>
+<body>
+<!--コントローラーが渡す必要のある変数(topic,url1,url2,url3,midasi1,midasi2,midasi3,relatedGenre1,relatedGenre2)-->
+<form action="/screen3" method = "post"> <!--RequestMappingのvalue="/screen3"-->
+<div class="grid-container">
+    <div class="h"><h1>[[${thistopic}]]</h1></div>  <!--topicにトピック名を渡してください-->
+    <!--url1,url2,url3にそれぞれのニュースのurlをmidasi1,midasi2,midasi3にそれぞれの記事の見出しを渡してください-->
+    <div class="l"><button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(0)}+'\''">[[${articleTitles.get(0)}]]</button></div> 
+    <div class="n"><button class="botan" type="button" th:attr="onClick='location.href=\''+${articleURLs.get(1)}+'\''">[[${articleTitles.get(1)}]]</button></div>
+    <!--relatedGenre1に関連するジャンル1つ目のジャンル名を渡してください--><!--ボタンを押すとRelatedGenre1にrelatedGenre1が入って引数String RelatedGenre1に入る-->
+    <div class="a">
+        <button name="topic" type = "submit" value="relatedGenre1Name" th:value="${relatedTopics.get(0)}">関連するトピック1<br>[[${relatedTopics.get(0)}]]</button>
+    </div>
+
+    <!--relatedGenre2に関連するジャンル2つ目のジャンル名を渡してください-->
+    <div class="e">
+        <button name="topic" type = "submit" value="relatedGenre2Name" th:value="${relatedTopics.get(1)}">関連するトピック2<br>[[${relatedTopics.get(1)}]]</button>
+
+    </div>
+
+    <!--画面遷移用のボタン-->
+    <div class="w">
+        <button name="goGenre" value="goGenre">ジャンルから選ぶ</button>
+    </div>
+    <div class="x">
+        <button name="goTopic" value="goTopic">トピックから選ぶ</button>
+    </div>
+    <div class="y">
+        <button name="goArticle" value="goArticle">記事から選ぶ</button>
+    </div>
+</div>
+</body>
+</form>
+</html>

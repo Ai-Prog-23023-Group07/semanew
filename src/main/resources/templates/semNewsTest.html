@@ -9,11 +9,15 @@
     <h1>[[${str}]]</h1>
     <ul>
         <!-- Thymeleafの構文を使用してListを表示 -->
-        <li th:each="item : ${genreEntities}" th:text="${item}"></li>
+        <li th:each="genre : ${genres}" th:text="${genre}"></li>
     </ul>
     <ul>
         <!-- Thymeleafの構文を使用してListを表示 -->
-        <li th:each="item : ${test}" th:text="${item}"></li>
+        <li th:each="topic : ${topics}" th:text="${topic}"></li>
+    </ul>
+    <ul>
+        <!-- Thymeleafの構文を使用してListを表示 -->
+        <li th:each="article : ${articles}" th:text="${article}"></li>
     </ul>
 </body>
 </html>
